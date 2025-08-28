@@ -1,0 +1,220 @@
+/* Reset e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #eaf6ff;
+  color: #333;
+}
+
+/* Container principal */
+.app-container {
+  min-height: 70vh;
+  width: 100%;
+  max-width: 700px;
+  margin: 6rem auto 2rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+/* Título */
+.app-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #cfd8dc;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+/* Botões */
+button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #4facfe;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(79, 172, 254, 0.3);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(79, 172, 254, 0.35);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(79, 172, 254, 0.3);
+}
+
+/* WeatherCard */
+.weather-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.weather-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.weather-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+/* Erro */
+.error-message {
+  color: #e74c3c;
+  font-weight: 600;
+  background: #fce4e4;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+/* SearchBar */
+.search-bar {
+  display: flex;
+  flex-direction: column; /* mobile */
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 6px rgba(79, 172, 254, 0.5);
+}
+
+.search-button {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #4facfe;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.search-button:hover {
+  opacity: 0.9;
+}
+
+/* Backgrounds dinâmicos modernos */
+.bg-gradient-default {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.bg-gradient-cloudy {
+  background: linear-gradient(135deg, #d7dde8 0%, #66717e 100%);
+}
+
+.bg-gradient-rain {
+  background: linear-gradient(135deg, #5f6caf 0%, #283e51 100%);
+}
+
+.bg-gradient-thunder {
+  background: linear-gradient(135deg, #434343 0%, #000000 100%);
+}
+
+.bg-gradient-snow {
+  background: linear-gradient(135deg, #f0f7ff 0%, #dfe9f3 100%);
+}
+
+.bg-gradient-sunny {
+  background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .app-title {
+    font-size: 1.5rem;
+  }
+
+  .weather-card {
+    padding: 1.5rem 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .search-bar {
+    flex-direction: row;
+  }
+
+  .search-input {
+    flex: 1;
+  }
+
+  .search-button {
+    width: auto;
+  }
+}
