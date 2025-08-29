@@ -86,13 +86,17 @@ function App() {
       setWeather(null);
       setForecast(null);
 
+      // Se o usuário não especificar país, a API pega o primeiro resultado
+      // Se quiser o Brasil (ou outro), deve digitar "Cidade,BR"
+      const query = cityName.trim();
+
       const url =
         currentMode === "daily"
           ? `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
-              cityName
+              query
             )}&appid=${API_KEY}&units=metric&lang=pt_br`
           : `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(
-              cityName
+              query
             )}&appid=${API_KEY}&units=metric&lang=pt_br`;
 
       const response = await fetch(url);
